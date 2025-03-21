@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>School Admission Admin - Applications</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="School Admission Admin Dashboard - Applications Listing">
+        <meta name="keywords" content="School Admission, Admin Dashboard, Applications">
+        <meta name="author" content="Your Name">
+        <link rel="icon" href="https://7hillskampala.com/wp-content/uploads/2023/04/cropped-Logo-png-1-32x32.png" type="image/x-icon">
+    
+        <!-- <link rel="icon" href="./assets/images/favicon.svg" type="image/x-icon"> -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" id="main-font-link">
+        <link rel="stylesheet" href="./assets/fonts/tabler-icons.min.css">
+        <link rel="stylesheet" href="./assets/fonts/feather.css">
+        <link rel="stylesheet" href="./assets/fonts/fontawesome.css">
+        <link rel="stylesheet" href="./assets/fonts/material.css">
+        <link rel="stylesheet" href="./assets/css/style.css" id="main-style-link">
+        <link rel="stylesheet" href="./assets/css/style-preset.css">
+        <style>
+    
+    
+            /* Apply the green color palette */
+            .pc-sidebar, .pc-header, .page-header-title h5, .card-header h5, th {
+                background-color: #5D8736; /* Main green background */
+                color: #fff; /* White text on main green */
+            }
+    
+            .pc-sidebar a, .breadcrumb-item a, .dropdown-item, .pc-header span {
+                color: #5D8736; /* Main green for links and text */
+            }
+    
+            .pc-sidebar a:hover, .dropdown-item:hover {
+                background-color: #809D3C; /* Lighter green for hover */
+                color: #fff;
+            }
+    
+            footer {
+                background-color: #A9C46C; /* Lighter green for footer */
+            }
+    
+            .pc-sidebar {
+                background-color: #A9C46C;
+            }
+    
+            .pc-sidebar a {
+                color: #5D8736;
+            }
+    
+            .pc-sidebar a:hover {
+                background-color: #809D3C;
+                color: #fff;
+            }
+    
+            .action-e {
+                background-color: #809D3C; /* Lighter green for edit action */
+                color: #fff;
+            }
+    
+            .action-e:hover {
+                background-color: #5D8736;
+            }
+    
+            /* Keep other styles as they were */
+            body {
+                font-family: 'Public Sans', sans-serif;
+            }
+    
+            .breadcrumb {
+                background-color: transparent;
+            }
+    
+            .breadcrumb-item + .breadcrumb-item::before {
+                color: #5D8736;
+            }
+    
+            .table thead th {
+                border-bottom: 2px solid #ddd;
+            }
+    
+            .table tbody tr:nth-child(even) {
+                background-color: #f8f8f8;
+            }
+       
+        </style>
+    </head>
+<body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <nav class="pc-sidebar">
+        <div class="navbar-wrapper">
+            <div class="m-header">
+                <a href="index.html" class="b-brand text-primary">
+                    <img src="./assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
+                </a>
+            </div>
+            <div class="navbar-content">
+                <ul class="pc-navbar">
+                    <li class="pc-item">
+                        <a href="index.html" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+                            <span class="pc-mtext">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="aplication.html" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-file-text"></i></span>
+                            <span class="pc-mtext">Applications</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="user.html" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-users"></i></span>
+                            <span class="pc-mtext">Users</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="setting.html" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-settings"></i></span>
+                            <span class="pc-mtext">Settings</span>
+                        </a>
+                    </li>
+                     <li class="pc-item">
+                        <a href="logout.html" class="pc-link">
+                            <span class="pc-micon"><i class="ti ti-logout"></i></span>
+                            <span class="pc-mtext">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="pc-header">
+        <div class="header-wrapper">
+            <div class="me-auto pc-mob-drp">
+                <ul class="list-unstyled">
+                    <li class="pc-h-item pc-sidebar-collapse">
+                        <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+                            <i class="ti ti-menu-2"></i>
+                        </a>
+                    </li>
+                    <li class="pc-h-item pc-sidebar-popup">
+                        <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+                            <i class="ti ti-menu-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ms-auto">
+                <ul class="list-unstyled">
+                    <li class="dropdown pc-h-item header-user-profile">
+                        <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false">
+                            <img src="./assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
+                            <span>Admin Name</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+                            <div class="dropdown-header">
+                                <div class="d-flex mb-1">
+                                    <div class="flex-shrink-0">
+                                        <img src="./assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1">Admin Name</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="mysrpTabContent">
+                                <div class="tab-pane fade show active" id="drp-tab-1" role="tabpanel" aria-labelledby="drp-t1" tabindex="0">
+                                    <a href="logout.html" class="dropdown-item">
+                                        <i class="ti ti-power"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="pc-container">
+        <div class="pc-content">
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">User Management</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item">User Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>User List</h5>
+                        </div>
+                        <div class="card-body table-border-style">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>Username</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#U123</td>
+                                            <td>admin</td>
+                                            <td>Administrator</td>
+                                            <td>Active</td>
+                                            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#U124</td>
+                                            <td>user1</td>
+                                            <td>Editor</td>
+                                            <td>Active</td>
+                                            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#U125</td>
+                                            <td>user2</td>
+                                            <td>Viewer</td>
+                                            <td>Inactive</td>
+                                             <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/plugins/popper.min.js"></script>
+    <script src="./assets/js/plugins/simplebar.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap.min.js"></script>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/pcoded.js"></script>
+    <script src="./assets/js/plugins/apexcharts.min.js"></script>
+    <script src="./assets/js/pages/dashboard-default.js"></script>
+</body>
+</html>
